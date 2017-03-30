@@ -14,7 +14,7 @@ local getinfo = debug.getinfo;
 local concat = table.concat;
 local STDOUT = io.stdout;
 local STDERR = io.stderr;
-local FILE = io.stdout;
+local FILE = io.stderr;
 -- constants
 local INSPECT_OPT = {
     depth = 0,
