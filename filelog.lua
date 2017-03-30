@@ -69,7 +69,8 @@ end
 
 
 --- accesslog
-local function accesslog()
+-- @param prefix
+local function accesslog( prefix )
     if ACLF then
         local arr = ACLF.arr;
         local map = ACLF.map;
@@ -90,7 +91,12 @@ local function accesslog()
             end
         end
 
-        FILE:write( concat( arr ), '\n' );
+        if prefix ~= nil then
+            assert( type( prefix ) == 'string', 'prefix must be string' );
+            FILE:write( prefix, DELIMITER, concat( arr ), '\n' );
+        else
+            FILE:write( concat( arr ), '\n' );
+        end
     end
 end
 
