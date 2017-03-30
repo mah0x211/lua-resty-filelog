@@ -1,4 +1,4 @@
-package = "filelog"
+package = "resty-filelog"
 version = "scm-1"
 source = {
     url = "git://github.com/yebisu14/lua-resty-filelog.git"
